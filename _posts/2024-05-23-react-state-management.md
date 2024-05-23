@@ -30,13 +30,13 @@ Redux simplifies Flux by combining the dispatcher and stores into a single entit
 
 #### How Redux Works
 
-1. **Create a Store**: The store is created using the `createStore` function. It takes a root reducer as an argument.
+1.**Create a Store**: The store is created using the `createStore` function. It takes a root reducer as an argument.
     {% highlight javascript %}
     import { createStore } from 'redux';
     const store = createStore(rootReducer);
     {% endhighlight %}
 
-2. **Define Actions**: Actions are defined as objects. They must have a `type` field, and they can carry additional data.
+2.**Define Actions**: Actions are defined as objects. They must have a `type` field, and they can carry additional data.
     {% highlight javascript %}
     const ADD_TODO = 'ADD_TODO';
     const addTodo = (text) => ({
@@ -45,7 +45,7 @@ Redux simplifies Flux by combining the dispatcher and stores into a single entit
     });
     {% endhighlight %}
 
-3. **Create Reducers**: Reducers specify how the state changes in response to actions.
+3.**Create Reducers**: Reducers specify how the state changes in response to actions.
     {% highlight javascript %}
     const initialState = {
         todos: [],
@@ -64,7 +64,7 @@ Redux simplifies Flux by combining the dispatcher and stores into a single entit
     };
     {% endhighlight %}
 
-4. **Dispatch Actions**: Actions are dispatched to make state changes.
+4.**Dispatch Actions**: Actions are dispatched to make state changes.
     {% highlight javascript %}
     store.dispatch(addTodo('Learn Redux'));
     console.log(store.getState()); // { todos: ['Learn Redux'] }
@@ -74,7 +74,7 @@ Redux simplifies Flux by combining the dispatcher and stores into a single entit
 
 To integrate Redux with a React application, we use the `react-redux` library, which provides bindings to connect React components to the Redux store.
 
-1. **Provider Component**: Wrap your root component with the `Provider` component to give your React app access to the Redux store.
+1.**Provider Component**: Wrap your root component with the `Provider` component to give your React app access to the Redux store.
     {% highlight javascript %}
     import { Provider } from 'react-redux';
     
@@ -85,7 +85,7 @@ To integrate Redux with a React application, we use the `react-redux` library, w
     );
     {% endhighlight %}
 
-2. **Connect Function**: Use the `connect` function to map state and dispatch to your component's props.
+2.**Connect Function**: Use the `connect` function to map state and dispatch to your component's props.
     {% highlight javascript %}
     import { connect } from 'react-redux';
     
