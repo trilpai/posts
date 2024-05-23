@@ -31,22 +31,22 @@ Redux simplifies Flux by combining the dispatcher and stores into a single entit
 #### How Redux Works
 
 1. **Create a Store**: The store is created using the `createStore` function. It takes a root reducer as an argument.
-    ```javascript
+    {% highlight javascript %}
     import { createStore } from 'redux';
     const store = createStore(rootReducer);
-    ```
+    {% endhighlight %}
 
 2. **Define Actions**: Actions are defined as objects. They must have a `type` field, and they can carry additional data.
-    ```javascript
+    {% highlight javascript %}
     const ADD_TODO = 'ADD_TODO';
     const addTodo = (text) => ({
         type: ADD_TODO,
         payload: text,
     });
-    ```
+    {% endhighlight %}
 
 3. **Create Reducers**: Reducers specify how the state changes in response to actions.
-    ```javascript
+    {% highlight javascript %}
     const initialState = {
         todos: [],
     };
@@ -62,20 +62,20 @@ Redux simplifies Flux by combining the dispatcher and stores into a single entit
                 return state;
         }
     };
-    ```
+    {% endhighlight %}
 
 4. **Dispatch Actions**: Actions are dispatched to make state changes.
-    ```javascript
+    {% highlight javascript %}
     store.dispatch(addTodo('Learn Redux'));
     console.log(store.getState()); // { todos: ['Learn Redux'] }
-    ```
+    {% endhighlight %}
 
 #### Integrating Redux with React
 
 To integrate Redux with a React application, we use the `react-redux` library, which provides bindings to connect React components to the Redux store.
 
 1. **Provider Component**: Wrap your root component with the `Provider` component to give your React app access to the Redux store.
-    ```javascript
+    {% highlight javascript %}
     import { Provider } from 'react-redux';
     
     const App = () => (
@@ -83,10 +83,10 @@ To integrate Redux with a React application, we use the `react-redux` library, w
             <MyComponent />
         </Provider>
     );
-    ```
+    {% endhighlight %}
 
 2. **Connect Function**: Use the `connect` function to map state and dispatch to your component's props.
-    ```javascript
+    {% highlight javascript %}
     import { connect } from 'react-redux';
     
     const mapStateToProps = (state) => ({
@@ -98,6 +98,6 @@ To integrate Redux with a React application, we use the `react-redux` library, w
     });
     
     export default connect(mapStateToProps, mapDispatchToProps)(MyComponent);
-    ```
+    {% endhighlight %}
 
 By following these steps, you ensure that your React application maintains a predictable state and simplifies the process of managing and debugging your application's state. Redux, with its unidirectional data flow and clear state management principles, remains a powerful tool for building scalable React applications.

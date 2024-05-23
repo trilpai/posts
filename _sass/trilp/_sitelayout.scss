@@ -84,7 +84,7 @@ body, html {
   .content {
     flex-grow: 1; // Flex grow to fill available space
     margin-top: calc(25vh - 9vh); // Adjusted margin from top
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     padding: 1.25rem;
