@@ -1,0 +1,39 @@
+title: trilp blog
+tagline: machine learning, ai, data science and software
+author:
+  name: Pradyumna(Prady) Das Roy
+  email: contact@trilp.in
+
+# The `>` after `description:` means to ignore line-breaks until next key.
+# If you want to omit the line-break after the end of text, use `>-` instead.
+description: >
+  Read blog posts by trilp, India's leading AI driven software development consultancy. 
+  Expert in AI, machine learning, and full-stack software like custom LMS, ERP, CRM.
+
+locale: en_IN
+logo: /assets/img/logo/trilplogo-white-bg.png
+image: /assets/img/logo/trilp-sm-share.jpg
+
+# Pagination
+paginate: 5 # posts per page
+paginate_path: "/page:num/"
+
+# Build settings
+theme: trilp
+#remote_theme: jekyll/minima
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+# Theme-specific settings
+
+# Set to `true` to show excerpts on the homepage.
+#show_excerpts: false
+
+# Trilp theme specific settings
+trilp:
+  # Trilp date format.
+  # The default value is "%b %d, %Y" (e.g. Nov 14, 2023) 
+  # Refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this.
+  date_format: "%b-%d-%Y"

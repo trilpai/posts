@@ -1,0 +1,30 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {%- seo -%}
+  <!-- 3 lines below for google fonts montserrat and cedarville cursive -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+
+  <!-- favicon icon code starts -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/icons/apple-touch-icon.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/icons/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/img/icons/favicon-16x16.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/assets/img/icons/site.webmanifest' | relative_url }}">
+  <link rel="mask-icon" href="{{ '/assets/img/icons/safari-pinned-tab.svg' | relative_url }}" color="#F7B924">
+  <link rel="shortcut icon" href="{{ '/assets/img/icons/favicon.ico' | relative_url }}">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="{{ '/assets/img/icons/browserconfig.xml' | relative_url }}">
+  <meta name="theme-color" content="#ffffff">
+  <!-- favicon icon code ends -->
+
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
+  
+</head>

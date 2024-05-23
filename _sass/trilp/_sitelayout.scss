@@ -1,0 +1,254 @@
+/* Base setup */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: $background-color; // Use variable for default background color
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $dark-background-color; // Use variable for dark background color
+    clip-path: polygon(0 8vh, 100vw 25vh, 100vw 0, 0 0); // Adjusted to use viewport units
+    z-index: 0; // Ensure it's below all interactive content
+  }
+}
+
+/* Typography Google Fonts */
+.cedarville-cursive-regular {
+  font-family: $font-family-cedarville;
+  font-weight: 400;
+  font-size: 36px;
+  font-style: normal;
+}
+
+.montserrat-reg {
+  font-family: $font-family-montserrat;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+// Container setup continued
+.container {
+  width: 70%;
+  margin: 0 auto;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; // Ensures footer sticks to the bottom
+
+  // Top navigation bar styling
+  .topbar {
+    color: white;
+    padding: 2vh 0; // Responsive vertical padding
+    z-index: 2; // Ensures it appears above other content
+
+    nav ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: inline;
+        margin-left: 2vw; // Responsive spacing between items
+
+        a {
+          color: white;
+          text-decoration: none; // Removes underline from links
+
+          // Active link styling
+          &.active {
+            color: $logo-color; // Use the gold-like yellow color for active link
+          }
+        }
+
+        img {
+          height: 5vh; // Responsive image height
+          margin-right: 2vw; // Space after the logo
+        }
+      }
+    }
+  }
+
+  // Content styling
+  .content {
+    flex-grow: 1; // Flex grow to fill available space
+    margin-top: calc(25vh - 9vh); // Adjusted margin from top
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem;
+
+    // Centered slogan inside content area
+    .centered-slogan {
+      text-align: center;
+      font-family: $font-family-cedarville;
+      font-weight: 400;
+      font-size: 36px;
+      color: $text-color-blue;
+    }
+  }
+}
+
+// Grid Container styling
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 190px); // 4 columns of equal width
+  gap: 20px; // Space between grid items
+  padding: 5px; // Padding around the grid container
+
+  // Grid Item styling
+  .grid-item {
+    display: flex;
+    flex-direction: column; // Organizes content vertically
+    align-items: center; // Centers items horizontally
+
+    a {
+      text-decoration: none; // Removes underline from links
+      color: inherit; // Inherits color from parent
+    }
+  }
+}
+
+// Service Card styling
+.service_card {
+  padding: 5px;
+  text-align: center;
+  transition: transform 0.3s ease; // Smooth transition for hover effect
+
+  &:hover {
+    transform: translateY(-5px); // Lift effect on hover
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); // Shadow for depth
+  }
+
+  img {
+    max-width: 100%; // Responsive image width
+    height: auto; // Maintains image aspect ratio
+  }
+
+  .service_card_text {
+    margin-top: 5px; // Space between image and text
+    text-align: center;
+    font-family: $font-family-montserrat;
+    font-weight: 300;
+    font-style: normal;
+    color: $text-color-blue;
+    font-size: small; // Smaller font size for subtext
+  }
+}
+
+// Additional styling for text emphasis
+.spaced-text {
+  letter-spacing: 0.04em; // Slightly spaced characters
+}
+
+.bold-font {
+  font-weight: 500; // Medium bold weight for emphasis
+}
+
+// Contact us section styling
+.contactus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+// Coloring text within contact us
+.red {
+  color: $text-color-red;
+}
+
+.blueink {
+  color: $text-color-blue;
+}
+
+/* Important note styling */
+.important_note {
+  display: flex;
+  padding: 0.5vh;
+
+  // Using nesting for child elements
+  &_left, &_right {
+    font-size: small;
+
+    // Specific styles for .important_note_left
+    &.important_note_left {
+      color: $text-color-grey; // Use variable for consistent color management
+      width: 70%;
+      padding-left: 2vw;
+      padding-right: 2vw;
+    }
+
+    // Specific styles for .important_note_right
+    &.important_note_right {
+      width: 30%;
+
+      div {
+        color: $text-color-red; // Use variable for red color
+        margin-bottom: 0.25rem; // Spacing between lines
+
+        span {
+          color: $text-color-grey; // Grey color for the rest of the text
+        }
+      }
+    }
+  }
+}
+
+// Footer styling with responsiveness in mind
+.footer {
+  text-align: center;
+  padding: 1vh;
+  color: $text-color-red;
+  font-size: smaller;
+
+  a img {
+    vertical-align: middle;
+    height: 2vh;
+  }
+}
+
+// Media queries for responsive design
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 210px); // Adjust grid for medium screens
+  }
+}
+
+@media (max-width: 950px) {
+  .container {
+    width: 100%; // Full width for smaller screens
+  }
+  .grid-container {
+    grid-template-columns: repeat(2, 290px); // Adjust grid for smaller screens
+  }
+}
+
+@media (max-width: 768px) {
+  .important_note_left, .important_note_right {
+    font-size: xx-small; // Smaller font size for very small devices
+  }
+  .footer {
+    font-size: x-small; // Adjust footer font size for readability on small devices
+  }
+}
+
+@media (max-width: 550px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); // Fluid grid for very small devices
+  }
+}
